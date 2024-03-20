@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import authRoute from './routes/auth.js';
@@ -9,6 +10,7 @@ import roomsRoute from './routes/rooms.js';
 
 const app = express();
 dotenv.config();
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 
